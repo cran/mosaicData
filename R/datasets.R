@@ -114,13 +114,14 @@ NA
 #'     \item{\code{date}} {date in 1978}
 #'     \item{\code{births}} {number of US births}
 #'     \item{\code{dayofyear}} {sequential number of days from 1 to 365}
+#'     \item{\code{wday}} {day of week as an ordered factor}
 #'   }
 #' 
 #' @examples
 #' data(Births78)
 #' if (require(lattice)) {
 #'   xyplot(births ~ date, Births78)
-#'   xyplot(births ~ date, Births78, groups=dayofyear%%7)
+#'   xyplot(births ~ date, Births78, groups = wday)
 #' }
 
 NA 
@@ -223,7 +224,7 @@ NA
 #' entirely numerical codes.  
 #' 
 #' @source
-#' Data are from \url{http://lib.stat.cmu.edu/datasets/CPS_85_Wages}.
+#' Data are from \url{http://lib.stat.cmu.edu/DASL}.
 #' 
 #' @references
 #' Berndt, ER. \emph{The Practice of Econometrics} 1991. Addison-Wesley. 
@@ -1381,11 +1382,17 @@ NA
 #' predictors and outcomes were collected at each of these five
 #' occasions.
 #' 
-#' This dataset is a subset of the \code{\link{HELPmiss}}  data which includes an
-#' additional 17 subjects with 
-#' partially observed data on some of the baseline variables.  This is
-#' also a subset of the \code{\link{HELPfull}}  data which includes 5 timepoints and many
-#' additional variables for all subjects.
+#' This data set is a subset of the \code{\link{HELPmiss}} data set restricted to
+#' the 453 subjects who were fully observed on the 
+#' \code{age}, \code{cesd}, \code{d1}, 
+#' \code{female}, \code{sex}, \code{g1b}, \code{homeless}, 
+#' \code{i1}, \code{i2}, \code{indtot}, \code{mcs}, \code{pcs}, \code{pss_fr},
+#' \code{racegrp}, \code{satreat}, \code{substance}, \code{treat}, 
+#' and \code{sexrisk} variables.  (There is some missingness in the other variables.)
+#' \code{\link{HELPmiss}} contains 17 additional subjects with 
+#' partially observed data on some of these baseline variables.  This is
+#' also a subset of the \code{\link{HELPfull}}  data which includes 5 timepoints and 
+#' many additional variables.
 #' 
 #' @source 
 #' \url{http://www.math.smith.edu/help}
@@ -1829,28 +1836,51 @@ NA
 #' @keywords datasets
 NA
 
-#' Height and Weight
+
+#' Volume of Users of a Massachusetts Rail Trail
+#'
+#'The Pioneer Valley Planning Commission (PVPC) collected data north of
+#' Chestnut Street in Florence, MA for ninety days from April 5, 2005 to 
+#' November 15, 2005. Data collectors set up a laser sensor, with breaks in the laser beam
+#' recording when a rail-trail user passed the data collection station.
+#' @docType data
+#' @name Riders
+#' @usage data(Riders)
+#' @format 
+#'   A data frame with 90 observations on the following 12 variables.
+#'   \describe{
+#'     \item{\code{date}}{date of data collection (POSIXct)}
+#'     \item{\code{day}}{a factor with levels \code{Monday}, \code{Tuesday}, \code{Wednesday}, 
+#'     \code{Thursday}, \code{Friday}, \code{Saturday}, and \code{Sunday}.}
+#'     \item{\code{highT}}{high temperature for the day (in degrees Fahrenheit)}
+#'     \item{\code{lowT}}{low temperature for the day (in degrees Fahrenheit)}
+#'     \item{\code{hi}}{shorter name for \code{highT}}
+#'     \item{\code{lo}}{shorter name for \code{lowT}}
+#'     \item{\code{precip}}{inches of precipitation}
+#'     \item{\code{clouds}}{measure of cloud cover (in oktas)}
+#'     \item{\code{riders}}{estimated number of trail crossings that day (number of breaks recorded)}
+#'     \item{\code{ct}}{shorter name for \code{riders}}
+#'     \item{\code{weekday}}{type of day: a factor with levels \code{N} (weekend or holiday) 
+#'     \code{Y} (non-holiday weekday)}
+#'     \item{\code{wday}}{shorter name for \code{weekday}}
+#'   }
+#' @details
+#' There is a potential for error when two users trigger the infrared beam at exactly the same time 
+#' since the counter would only logs one of the crossings.  The collectors left the motion detector 
+#' out during the winter, but because the counter drops data when the temperature falls below 14 
+#' degrees Fahrenheit, there are no data for the coldest winter months.
 #' 
-#' The height and weight data collected from 57 males and 24 females for the
-#' purpose of exploring how the weight of a person is related to his or her height.
-#'  
-#'  @docType data
-#'  @name Heightweight
-#'  @usage data(Heightweight)
-#'  @format
-#'      A data frame with 81 observations on the following variables.
-#'   
-#'  \itemize{
-#'    \item{\code{female}} {0 = male, 1 = female}
-#'    \item{\code{gender}} {a factor with levels \code{male} or \code{female}}
-#'    \item{\code{height}} {subject height (in inches)}
-#'    \item{\code{weight}} {subject weight (in pounds)}
-#'  }
-#' 
+#' @source
+#' Pioneer Valley Planning Commission, 
+#' http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf
+#'
 #' @references
-#' Part of the Carnegie Mellon University Online Learning Initiative datasets.
+#' "Rail trails and property values: Is there an association?", 
+#' Nicholas J. Horton and Ella Hartenian (Journal of Statistics Education, 2015), 
+#' http://www.amstat.org/publications/jse/v23n2/horton.pdf
+#'
+#' @examples
+#' data(Riders)
+#' str(Riders)
 #' 
-#' @keywords datasets
-
 NA
-
