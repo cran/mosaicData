@@ -15,7 +15,8 @@
     \item{\code{cloudcover}} {measure of cloud cover (in oktas)}
     \item{\code{precip}} {measure of precipitation (in inches)}
     \item{\code{volume}} {estimated number of trail users that day (number of breaks recorded)}
-    \item{\code{weekday}} {indicator of whether the day was a non-holiday weekday}
+    \item{\code{weekday}} {logical indicator of whether the day was a non-holiday weekday}
+    \item{\code{dayType}} {one of "weekday" or "weekend"}
   }}
 \source{
 Pioneer Valley Planning Commission
@@ -41,4 +42,3 @@ data(RailTrail)
 \references{
 http://www.fvgreenway.org/pdfs/Northampton-Bikepath-Volume-Counts%20_05_LTA.pdf
 }
-

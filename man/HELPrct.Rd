@@ -37,7 +37,7 @@ past 30 days (measured at baseline)}
     \item{\code{treat}} {randomized to HELP clinic: \code{no} \code{yes}}
   }}
 \source{
-\url{http://www.math.smith.edu/help}
+\url{https://nhorton.people.amherst.edu/help/}
 }
 \usage{
 data(HELPrct)
@@ -94,4 +94,3 @@ a multi-disciplinary health intervention in a detoxification unit.
 \code{\link{HELPmiss}}, and \code{\link{HELPfull}}.
 }
 \keyword{datasets}
-

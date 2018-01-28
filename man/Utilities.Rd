@@ -16,7 +16,7 @@
     \item{\code{billingDays}} {number of billing days in billing period}
     \item{\code{totalbill}} {total bill (in dollars)}
     \item{\code{gasbill}} {gas bill (in dollars)}
-    \item{\code{elecbill}} {exectric bill (in dollars)}
+    \item{\code{elecbill}} {electric bill (in dollars)}
     \item{\code{notes}} {notes about the billing period}
   }}
 \source{
@@ -40,4 +40,3 @@ if (require(lattice)) {
 \code{\link{Utilities2}}.
 }
 \keyword{datasets}
-
