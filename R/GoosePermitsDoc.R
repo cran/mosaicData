@@ -9,9 +9,9 @@
 #' @usage data(GoosePermits)
 #' @format  A data.frame with 11 observations on the following 3 variables.
 #' \itemize{
-#'    item{code{bid }}{amount offered for permit (US $) [numeric]}
-#'    item{code{keep }}{number of hunters who kept the permit and returned the cash [numeric]}
-#'    item{code{sell }}{number of hunters who kept the cash and returned the permit [numeric]}
+#'    item{code{bid }}{amount offered for permit (US $) (numeric)}
+#'    item{code{keep }}{number of hunters who kept the permit and returned the cash (numeric)}
+#'    item{code{sell }}{number of hunters who kept the cash and returned the permit (numeric)}
 #' }
 #' @source  Bishop and Heberlein. 
 #' "Measuring values of extramarket goods: are indirect measures biased?". 
@@ -26,10 +26,10 @@
 #' 
 #' goose.model <- 
 #'   glm( cbind(keep, sell) ~ log(bid), data = GoosePermits, family = binomial())
-#' if (require(mosaic)) {
-#'   f <- makeFun(goose.model)
-#'   xyplot( (keep/(keep+sell)) ~ bid, data = GoosePermits, ylim = c(0,1.05))
-#'   plotFun( f(b) ~ b, add = TRUE) 
+#' if (require(ggformula)) {
+#'   y.hat <- makeFun(goose.model)
+#'   gf_point( (keep/(keep+sell)) ~ bid, data = GoosePermits, ylim = c(0,1.05)) %>%
+#'   gf_fun(y.hat(b) ~ b, add = TRUE, color = "red", alpha = 0.5) 
 #' }
 #' 
 NA
