@@ -4,7 +4,8 @@
 \name{SnowGR}
 \alias{SnowGR}
 \title{Snowfall data for Grand Rapids, MI}
-\format{A data frame with 119 observations of the following variables.
+\format{
+A data frame with 119 observations of the following variables.
 \itemize{
 \item \code{SeasonStart} Year in which season started (July is start of season)
 \item \code{SeasonEnd} Year in which season ended (June is end of season)
@@ -21,10 +22,13 @@
 \item \code{May} Inches of snow in May
 \item \code{Jun} Inches of snow in June
 \item \code{Total} Inches of snow for entire season (July-June)
-}}
+}
+}
 \source{
-These data were compiled by Laura Kapitula from data available at
-\url{http://www.crh.noaa.gov/grr/climate/data/grr/snowfall/}.
+These data were compiled by Laura Kapitula from data available
+from NOAA. The original URL used
+(http://www.crh.noaa.gov/grr/climate/data/grr/snowfall/)
+is no longer in service.
 }
 \usage{
 data(SnowGR)
