@@ -60,7 +60,7 @@ NA
 #'   }
 #'
 #' @source
-#' Gapminder (\url{http://www.gapminder.org/data/})
+#' Gapminder (\url{https://www.gapminder.org/data/})
 #'
 #'
 #' @examples
@@ -169,7 +169,7 @@ NA
 #' entirely numerical codes.  
 #' 
 #' @source
-#' Data are from \url{http://lib.stat.cmu.edu/DASL}.
+#' Data are from <https://dasl.datadescription.com>
 #' 
 #' @references
 #' Berndt, ER. \emph{The Practice of Econometrics} 1991. Addison-Wesley. 
@@ -246,14 +246,15 @@ NA
 #'     \item{\code{m.hot}} {flow rate (L/min) of the hot water}
 #'   }
 #' @examples
-#' # We can test for heat exchange with the environment by check to see if the 
+#' # We can test for heat exchange with the environment by checking to see if the 
 #' # heat gained by the cold water matches the heat lost by the hot water.
 #' C_p <- 4.182 / 60  # / 60 because measuring m in L/min
-#' HeatX2 <- transform(HeatX, 
-#'                 Q.cold = m.cold * C_p * (T.cold.out - T.cold.in),
-#'                 Q.hot= m.hot * C_p * (T.hot.out- T.hot.in)
-#')
-#' HeatX2 <- transform(HeatX2, Q.env = Q.cold + Q.hot)
+#' HeatX2 <- 
+#'   dplyr::mutate(HeatX,
+#'     Q.cold = m.cold * C_p * (T.cold.out - T.cold.in),
+#'     Q.hot  = m.hot * C_p * (T.hot.out- T.hot.in),
+#'     Q.env  = Q.cold + Q.hot
+#'   )
 #' if (require(ggformula)) {
 #'   gf_jitter( "" ~ Q.env, data = HeatX2, alpha = 0.6, size = 4, 
 #'     width = 0, height = 0.1, seed = 123) %>%
@@ -280,39 +281,34 @@ NA
 #'   A data frame with 1236 observations on the following variables.
 #'   \itemize{
 #'     \item{\code{id}} {identification number}
-#'     \item{\code{plurality}} {5 = single fetus}
-#'     \item{\code{outcome}} {1 = live birth that survived at least 28 days}
+#'     \item{\code{plurality}} {all "single fetus" in this data set}
+#'     \item{\code{outcome}} {all "live birth" (survived at least 28 days) in this data set}
 #'     \item{\code{date}} {birth date where 1096=January 1, 1961}
 #'     \item{\code{gestation}} {length of gestation (in days)}
 #'     \item{\code{wt}} {birth weight (in ounces)}
 #'     \item{\code{parity}} {total number of previous pregnancies (including fetal deaths
 #' and still births)}
-#'     \item{\code{race}} {mother's race: 0-5=white 6=mex 7=black 8=asian 9=mixed}
+#'     \item{\code{race}} {mother's race: "asian", "black", "mex",  "mixed", or "white"}
 #'     \item{\code{age}} {mother's age in years at termination of pregnancy}
-#'     \item{\code{ed}} {mother's education:  0= less than 8th grade, 
-#' 1 = 8th -12th grade - did not graduate, 
-#' 2= HS graduate--no other schooling, 3= HS+trade,
-#' 4=HS+some college,
-#' 5=College graduate, 
-#' 6=Trade school, 7=HS unclear}
+#'     \item{\code{ed}} {mother's education}
 #'     \item{\code{ht}} {mother's height in inches to the last completed inch}
 #'     \item{\code{wt.1}} {mother's prepregnancy weight (in pounds)}
-#'     \item{\code{drace}} {father's race (a factor with levels equivalent to mother's race)}
+#'     \item{\code{drace}} {father's race}
 #'     \item{\code{dage}} {father's age (in years)}
-#'     \item{\code{ded}} {father's education (same coding as mother's education)}
+#'     \item{\code{ded}} {father's education}
 #'     \item{\code{dht}} {father's height in inches to the last completed inch}
 #'     \item{\code{dwt}} {father's weight (in pounds)}
-#'     \item{\code{marital}} {marital status: 1=married, 2=legally separated, 3=divorced,
-#'   4=widowed, 5=never married}
-#'     \item{\code{inc}} {family yearly income in $2500 increments: 0=under 2500,
-#'   1=2500-4999, ..., 8=12,500-14,999, 9=15000+}
-#'     \item{\code{smoke}} {does mother smoke? 0=never, 1=smokes now, 
-#'     2=until current pregnancy, 3=once did, not now}
-#'     \item{\code{time}} {time since quitting smoking: 0=never smoked, 1=still smokes,
-#'     2=during current preg, 3=within 1 year, 4=1 to 2 years ago,
-#'     5= 2 to 3 years ago, 6= 3 to 4 years ago, 7=5 to 9 years ago, 
-#'     8=10+ years ago, 9=quit and don't know}
-#'     \item{\code{number}} {number of cigarettes smoked per day for past and current smokers  0=never, 1=1-4, 2=5-9, 3=10-14, 4=15-19, 5=20-29, 6=30-39, 7=40-60, 8=60+, 9=smoke but don't know}
+#'     \item{\code{marital}} {marital status},
+#'     \item{\code{inc}} {family yearly income in $2500 increments}
+#'     \item{\code{smoke}} {does mother smoke? (never, smokes now, 
+#'       until current pregnancy, once did, not now)}
+#'     \item{\code{time}} {time since quitting smoking 
+#'       (never smoked, still smokes, during current preg, within 1 year, 
+#'       1 to 2 years ago, 2 to 3 years ago, 3 to 4 years ago, 
+#'       5 to 9 years ago, 10+ years ago, quit and don't know}
+#'     \item{\code{number}} {number of cigarettes smoked per day for past and 
+#'       current smokers  (never, 1-4, 5-9, 10-14, 15-19, 20-29, 30-39, 40-60, 60+, 
+#'         smoke but don't know)}
 #'   }
 #' 
 #' @details 
@@ -322,7 +318,7 @@ NA
 #' The book by Nolan and Speed
 #' describes the data in more detail 
 #' and provides an Internet site for accessing them: 
-#' \url{http://www.stat.berkeley.edu/users/statlabs}
+#' \url{https://www.stat.berkeley.edu/users/statlabs/}
 #' 
 #' 
 #' @references 
@@ -1288,6 +1284,7 @@ NA
 #'     \item{\code{anysub}} {use of any substance post-detox: a factor with levels \code{no} \code{yes}} 
 #'     \item{\code{cesd}} {Center for Epidemiologic Studies Depression measure at baseline (high scores indicate more depressive symptoms)}
 #'     \item{\code{d1}} {lifetime number of hospitalizations for medical problems (measured at baseline)}
+#'     \item{\code{hospitalizations}} {lifetime number of hospitalizations for medical problems (measured at baseline)}
 #'     \item{\code{daysanysub}} {time (in days) to first use of any substance post-detox}
 #'     \item{\code{dayslink}} {time (in days) to linkage to primary care}
 #'     \item{\code{drugrisk}} {Risk Assessment Battery drug risk scale at baseline}
@@ -1417,9 +1414,8 @@ NA
 #'   A data frame with 98 observations on the following variables.
 #'   \itemize{
 #'     \item{\code{bookpageID}} {a factor with levels for each book and page (unique identifier)}
-#'     \item{\code{appdate}} {a factor with levels corresponding to each of the dates on which the
-#' application was filed (in the form MO/DY/YY, e.g. 1/22/99 represents January 22, 1999)}
-#'     \item{\code{ceremonydate}} {a factor with levels corresponding to the date of the ceremony}
+#'     \item{\code{appdate}} {date on which the application was filed}
+#'     \item{\code{ceremonydate}} {date of the ceremony}
 #'     \item{\code{delay}} {number of days between the application and the ceremony}
 #'     \item{\code{officialTitle}} {a factor with levels \code{BISHOP} \code{CATHOLIC PRIEST} \code{CHIEF CLERK} \code{CIRCUIT JUDGE } \code{ELDER} \code{MARRIAGE OFFICIAL} \code{MINISTER} \code{PASTOR} \code{REVEREND}}
 #'     \item{\code{person}} {a factor with levels \code{Bride} \code{Groom}}
@@ -1465,7 +1461,13 @@ NA
 #'     }
 #'     
 #' @details
-#' Researchers suspected that attack of a plant by one organism induced resistance to subsequent attack by a different organism.  Individually potted cotton plants were randomly allocated to two groups: infestation by spider mites or no infestation.  After two weeks the mites were dutifully removed by a conscientious research assistant, and both groups were inoculated with Verticillium, a fungus that causes Wilt disease.  More information can be found at \url{https://www.causeweb.org/webinar/activity/2010-01/}.
+#' Researchers suspected that attack of a plant by one organism induced
+#' resistance to subsequent attack by a different organism.  Individually potted
+#' cotton plants were randomly allocated to two groups: infestation by spider
+#' mites or no infestation.  After two weeks the mites were dutifully removed by
+#' a conscientious research assistant, and both groups were inoculated with
+#' Verticillium, a fungus that causes Wilt disease.  More information can be
+#' found at <https://www.causeweb.org/cause/webinar/activity/2010-01/>.
 #'
 #' @source
 #' Statistics for the Life Sciences, Third Edition; Myra Samuels & Jeffrey Witmer (2003), page 409.
@@ -1725,17 +1727,19 @@ NA
 #' 
 #' @examples 
 #' data(SnowGR)
-#' if (require(mosaic)) {
+#' if (require(ggformula)) {
 #'   df_stats(~ Total, data = SnowGR)
 #'   gf_histogram( ~ Total, data = SnowGR)
 #'   gf_point(Total ~ SeasonStart, data = SnowGR) %>%
 #'     gf_smooth()
 #' }
-#' if (require(tidyr)) {
+#' if (require(tidyr) && require(dplyr)) {
 #'   Snow2 <- 
 #'     SnowGR %>%
-#'     gather("Time", "Snowfall", Jul:Total) 
-#'   gf_boxplot(Snowfall ~ Time, data = Snow2)
+#'     pivot_longer(Jul:Total, names_to = "month", values_to = "snowfall") %>%
+#'     filter(month != "Total") %>%
+#'     mutate(month = factor(month, levels = unique(month)))
+#'   gf_violin(snowfall ~ month, data = Snow2, scale = "width")
 #' }
 #' 
 #' @keywords datasets
