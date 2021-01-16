@@ -1,13 +1,13 @@
 Package: mosaicData
 Type: Package
 Title: Project MOSAIC Data Sets
-Version: 0.20.1
+Version: 0.20.2
 Depends: R (>= 3.0.0)
 Suggests: lattice, mosaic, reshape2, ggplot2, dplyr, tidyr, ggformula
 Author: Randall Pruim <rpruim@calvin.edu>, Daniel Kaplan
     <kaplan@macalester.edu>, Nicholas Horton <nhorton@amherst.edu>
 Maintainer: Randall Pruim <rpruim@calvin.edu>
-Description: Data sets from Project MOSAIC (<http://mosaic-web.org>) used
+Description: Data sets from Project MOSAIC (<http://www.mosaic-web.org>) used
     to teach mathematics, statistics, computation and modeling.  Funded by the
     NSF, Project MOSAIC is a community of educators working to tie together
     aspects of quantitative work that students in science, technology,
@@ -17,9 +17,10 @@ License: GPL (>= 2)
 LazyLoad: yes
 LazyData: yes
 RoxygenNote: 7.1.1
+Encoding: UTF-8
 URL: https://github.com/ProjectMOSAIC/mosaicData
 BugReports: https://github.com/ProjectMOSAIC/mosaicData/issues
 NeedsCompilation: no
-Packaged: 2020-09-13 14:18:37 UTC; rpruim
+Packaged: 2021-01-16 07:08:16 UTC; rpruim
 Repository: CRAN
-Date/Publication: 2020-09-13 14:50:02 UTC
+Date/Publication: 2021-01-16 07:50:02 UTC

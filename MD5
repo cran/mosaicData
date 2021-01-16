@@ -1,12 +1,12 @@
-ff19394bda0be2fa16cc3d4c7feb317f *DESCRIPTION
+ae6cdc711e288c201f47476f89f258ad *DESCRIPTION
 dc21c19f0d6968ee25d441b2cf46017d *NAMESPACE
-16912ee622b2f5405662fe4c9d13f9be *NEWS.md
+d516ea4d5a4a2e37433b30e58cc533bf *NEWS.md
 c9604c59776b7552e2d93eaf58b235ff *R/BirthsDoc.R
 67055217125268ec2397ec474164190c *R/DimesDoc.R
 fa7713935be749984c68269e7bb101ff *R/GoosePermitsDoc.R
 30dbcd499f7ac676559247afa25b7076 *R/SaratogaHousesDoc.R
 c625ed7823f5b456a78ceb1c49ef6701 *R/Weather.R
-e490dccf253838c94857429a0f5fb9c9 *R/datasetsDoc.R
+e15b6e1cf3b6bc859d161a027b322b45 *R/datasetsDoc.R
 8190971d1b98a9b45abb78d958a8be15 *README.md
 1962ba7b8cbb5bde5fe6d8a39a05643c *data/Alcohol.rda
 7b3026b9aab1658d527bd9fed44d3b0e *data/Birthdays.rda
@@ -63,7 +63,7 @@ ac34120267564731de5b8fac7fba9d92 *man/Mites.Rd
 530dc1ab435d53ef646540b04ba13f0f *man/Riders.Rd
 a339274702d1efcca9b1dd1e0c307447 *man/SAT.Rd
 43932e626a96c50b9d4ea39217afd77e *man/SaratogaHouses.Rd
-5a026343c315d4cbceda8bbc23fb07ef *man/SnowGR.Rd
+0818c6de6729885cde45d4dbc2b25623 *man/SnowGR.Rd
 a040a734ec5097b73883d35e44bdbed0 *man/SwimRecords.Rd
 c9a27e447a747504256f796ba4955ee0 *man/TenMileRace.Rd
 2c7e360d3ea7e8c520e96e6eb07ae9aa *man/Utilities.Rd
