@@ -1,10 +1,10 @@
-ae6cdc711e288c201f47476f89f258ad *DESCRIPTION
+e169fa24abea280b4f7e5fc76ba59f1c *DESCRIPTION
 dc21c19f0d6968ee25d441b2cf46017d *NAMESPACE
 d516ea4d5a4a2e37433b30e58cc533bf *NEWS.md
-c9604c59776b7552e2d93eaf58b235ff *R/BirthsDoc.R
+d61d0dafe9069bfb271503b7d11f6c0f *R/BirthsDoc.R
 67055217125268ec2397ec474164190c *R/DimesDoc.R
 fa7713935be749984c68269e7bb101ff *R/GoosePermitsDoc.R
-30dbcd499f7ac676559247afa25b7076 *R/SaratogaHousesDoc.R
+c8df2593ebd821fc5b23268802257961 *R/SaratogaHousesDoc.R
 c625ed7823f5b456a78ceb1c49ef6701 *R/Weather.R
 e15b6e1cf3b6bc859d161a027b322b45 *R/datasetsDoc.R
 8190971d1b98a9b45abb78d958a8be15 *README.md
@@ -13,6 +13,8 @@ e15b6e1cf3b6bc859d161a027b322b45 *R/datasetsDoc.R
 deafb9057aa061e6ddc89251c276b57b *data/Births.rda
 d51ee9942c084e67926a651fd82c70fa *data/Births2015.rda
 c2ef5cab1450097ef85bf7150d9fbdd7 *data/Births78.rda
+86d8a8c2524d944cd4e6a182b33c1845 *data/BirthsCDC.rda
+bf11754285cc2c049f09708f904f8f89 *data/BirthsSSA.rda
 66baa6db1e062dee6a258e1af98e303a *data/CPS85.rda
 f1dd7781eb76aec2fcfddf63a1a7291d *data/Cards.rda
 4b0ee3fbf997d2abf93a1c0fb6a63de1 *data/CoolingWater.rda
@@ -26,7 +28,7 @@ ee0b2dee5b256d94f0c5ffb28552380d *data/GoosePermits.rda
 7d6db9e71a4ef5c86e364fa5c447b59f *data/HELPrct.rda
 28eb653f91094f1317b8f11399810918 *data/HeatX.R
 2210113b6eac8589a16adfd7f3d0476f *data/KidsFeet.rda
-642f621548988c2092fc76b1bf4af128 *data/Marriage.rda
+0c909ffb4559ef31d49996b50261600a *data/Marriage.rda
 eab58c3bd1f4b79ee21fdb84f32bf278 *data/Mites.rda
 6528ae72ddb70e7f8305bfffa5fced8d *data/RailTrail.rda
 3597bbdfa976a8da08a598290922031d *data/Riders.rda
@@ -40,10 +42,8 @@ b485a91ba017cbbce66c9c8ba450bc31 *data/SwimRecords.rda
 b67cf6698a29df98c4e6e528caf5b60a *data/Weather.rda
 22def010ac8b53de2cd41662018736f3 *data/Whickham.rda
 9e4b0cfe9104c76b7e251e8bd2ab5aed *man/Alcohol.Rd
-9078abdc0eb445b5f78cc5e9a53db801 *man/Birthdays.Rd
-26ae8213aad1a510b8c26bd5589ad11a *man/Births.Rd
-ff5c448aada3a468e9fbdbfd9a3231b7 *man/Births2015.Rd
-c79bb562bc95f94e4014ae32a30682c8 *man/Births78.Rd
+1637a2ba607f3866bdca2b85758d19af *man/Birthdays.Rd
+61a483b225967b3b5e0a2da5d8ab3764 *man/Births.Rd
 a1889d799f7e00bd1113802af9781e58 *man/CPS85.Rd
 0bd7d08ea052ef489ed8639e977ff407 *man/Cards.Rd
 8c71c9d482355482ca4359a8aa6fb06a *man/CoolingWater.Rd
@@ -54,7 +54,7 @@ a1889d799f7e00bd1113802af9781e58 *man/CPS85.Rd
 b24ec2eb6d5aeb33d082eec0708232b4 *man/GoosePermits.Rd
 ac409f94315434a6e3d315875e5dbbd8 *man/HELPfull.Rd
 ab301282364de5d301167199a6593c83 *man/HELPmiss.Rd
-fe501ee360280e87f3e34c695ac09571 *man/HELPrct.Rd
+f232bade81027c3ec3a3149e8a8a452e *man/HELPrct.Rd
 ef9854ccf0420daf9e275dd975324eb5 *man/HeatX.Rd
 cf7ddb09e52118fc4629558acf46c663 *man/KidsFeet.Rd
 a02b51a3a8fc715a86fe91df89989307 *man/Marriage.Rd
@@ -62,7 +62,7 @@ ac34120267564731de5b8fac7fba9d92 *man/Mites.Rd
 39aff65a00f2272c7c97ea332145c51e *man/RailTrail.Rd
 530dc1ab435d53ef646540b04ba13f0f *man/Riders.Rd
 a339274702d1efcca9b1dd1e0c307447 *man/SAT.Rd
-43932e626a96c50b9d4ea39217afd77e *man/SaratogaHouses.Rd
+7918a5efcea3a61510fcb8c6631ff516 *man/SaratogaHouses.Rd
 0818c6de6729885cde45d4dbc2b25623 *man/SnowGR.Rd
 a040a734ec5097b73883d35e44bdbed0 *man/SwimRecords.Rd
 c9a27e447a747504256f796ba4955ee0 *man/TenMileRace.Rd

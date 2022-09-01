@@ -25,9 +25,13 @@ A day by day record of the number of births in each US State.
 data(Birthdays)
 if (require(mosaic)) {
   MI <- Birthdays \%>\% filter(state == "MI")
-  gf_point(births ~ date, Birthdays, data = MI) 
+  gf_point(births ~ date, Birthdays, data = MI)
   gf_line(births ~ date, Birthdays, data = MI, color = ~ wday)
-  gf_line(births ~ date, 
+  gf_line(births ~ date,
     data = Birthdays \%>\% group_by(date) \%>\% summarise(births = sum(births)))
   }
+}
+\seealso{
+\code{Births}, \code{Births78}, \code{Births2015}, \code{BirthsSSA}, \code{BirthsCDC} for data sets that are
+aggregated at the level of the entire country.
 }
