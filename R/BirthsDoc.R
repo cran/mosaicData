@@ -13,19 +13,21 @@
 #' @usage data(BirthsCDC)
 #' @format  A data.frame with the following 8 variables.
 #'
-#'  * `date`   Date
-#'  * `births` Number of births on `date` (integer)
-#'  * `wday`   Day of week (ordered factor)
-#'  * `year`   Year (integer)
-#'  * `month`  Month (integer)
-#'  * `day_of_year`  Day of year (integer)
-#'  * `day_of_month` Day of month (integer)
-#'  * `day_of_week`  Day of week (integer)
+#' \describe{
+#'  \item{\code{date}}{Date}
+#'  \item{\code{births}}{Number of births on `date` (integer)}
+#'  \item{\code{wday}}{Day of week (ordered factor)}
+#'  \item{\code{year}}{Year (integer)}
+#'  \item{\code{month}}{Month (integer)}
+#'  \item{\code{day_of_year}}{Day of year (integer)}
+#'  \item{\code{day_of_month}}{Day of month (integer)}
+#'  \item{\code{day_of_week}}{Day of week (integer)}
+#'  }
 #'
 #' @source
 #' * Data source for `Births`: National Vital Statistics System natality data, as provided by
 #'   Google BigQuery and exported to csv by
-#'   Robert Kern <http://www.mechanicalkern.com/static/birthdates-1968-1988.csv>.
+#'   Robert Kern <https://www.mechanicalkern.com:443/static/birthdates-1968-1988.csv>.
 #' * Data source for `BirthsSSA`  US Social Security Administration, as curated at <https://github.com/fivethirtyeight/data/tree/master/births>
 #' * Data source for `BirthsCDC`  US Centers for Disease Control, as curated at <https://github.com/fivethirtyeight/data/tree/master/births>
 #' * Data source for `Births2015`: Obtained from the National Center for Health Statistics,
@@ -65,8 +67,8 @@
 #'     stat_smooth(se = FALSE, geom = "line", alpha = 0.6, size = 1.5)
 #'   if (require(dplyr)) {
 #'     ggplot(
-#'      data =  bind_cols(Births %>% filter(year == 1978),
-#'                        Births78 %>% rename(births78 = births)),
+#'      data =  bind_cols(Births |> filter(year == 1978),
+#'                        Births78 |> rename(births78 = births)),
 #'      aes(x = births - births78)
 #'      ) +
 #'      geom_histogram(binwidth = 1)
@@ -81,16 +83,16 @@
 #'     stat_smooth(se = FALSE, geom = "line", alpha = 0.6, size = 1.5)
 #'   if (require(dplyr)) {
 #'     ggplot(
-#'      data =  bind_cols(Births %>% filter(year == 1978),
-#'                        Births78 %>% rename(births78 = births)),
+#'      data =  bind_cols(Births |> filter(year == 1978),
+#'                        Births78 |> rename(births78 = births)),
 #'      aes(x = births - births78)
 #'      ) +
 #'      geom_histogram(binwidth = 1)
 #'
 #'     # SSA records more births than CDC
 #'     ggplot(
-#'      data =  bind_cols(BirthsSSA %>% filter(year <= 2003) %>% rename(SSA = births),
-#'                        BirthsCDC %>% filter(year >= 2000) %>% rename(CDC = births)),
+#'      data =  bind_cols(BirthsSSA |> filter(year <= 2003) |> rename(SSA = births),
+#'                        BirthsCDC |> filter(year >= 2000) |> rename(CDC = births)),
 #'      aes(x = SSA - CDC)
 #'      ) +
 #'      geom_histogram(binwidth = 10)
@@ -110,13 +112,14 @@ NA
 #' @usage data(Birthdays)
 #' @format
 #'   A data frame with 374221 observations on the following variables.
-#'   \itemize{
-#'     \item{\code{state}} {state where child was born}
-#'     \item{\code{year}} {year (1969-1988)}
-#'     \item{\code{month}} {month (1-12)}
-#'     \item{\code{day}} {day of month}
-#'     \item{\code{date}} {date as a date object}
-#'     \item{\code{births}} {number of births}
+#'   \describe{
+#'     \item{\code{state}}{state where child was born}
+#'     \item{\code{year}}{year (1969-1988)}
+#'     \item{\code{month}}{month (1-12)}
+#'     \item{\code{day}}{day of month}
+#'     \item{\code{date}}{date as a date object}
+#'     \item{\code{wday}}{Day of week (ordered factor)}
+#'     \item{\code{births}}{number of births}
 #'   }
 #'
 #' @seealso `Births`, `Births78`, `Births2015`, `BirthsSSA`, `BirthsCDC` for data sets that are
@@ -125,11 +128,11 @@ NA
 #' @examples
 #' data(Birthdays)
 #' if (require(mosaic)) {
-#'   MI <- Birthdays %>% filter(state == "MI")
+#'   MI <- Birthdays |> filter(state == "MI")
 #'   gf_point(births ~ date, Birthdays, data = MI)
 #'   gf_line(births ~ date, Birthdays, data = MI, color = ~ wday)
 #'   gf_line(births ~ date,
-#'     data = Birthdays %>% group_by(date) %>% summarise(births = sum(births)))
+#'     data = Birthdays |> group_by(date) |> summarise(births = sum(births)))
 #'   }
 
 NA

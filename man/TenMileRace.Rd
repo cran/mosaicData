@@ -6,16 +6,16 @@
 \title{Cherry Blossom Race}
 \format{
 A data frame with 8636 observations on the following variables.
-\itemize{
-\item{\code{state}} {State of residence of runner.}
-\item{\code{time}} {Official time from starting gun to finish line.}
-\item{\code{net}} {The recorded time (in seconds) from when the runner crossed the starting
+\describe{
+\item{\code{state}}{State of residence of runner.}
+\item{\code{time}}{Official time from starting gun to finish line.}
+\item{\code{net}}{The recorded time (in seconds) from when the runner crossed the starting
 line to when the runner crossed the finish line.  This is generally
 less than the official time because of the large number of runners in
 the race: it takes time to reach the starting line after the gun has
 gone off.}
-\item{\code{age}} {Age of runner in years.}
-\item{\code{sex}} {A factor with levels \code{F} \code{M}.}
+\item{\code{age}}{Age of runner in years.}
+\item{\code{sex}}{A factor with levels \code{F} \code{M}.}
 }
 }
 \usage{
@@ -30,7 +30,7 @@ are published.  This data frame  contains the results from the 2005 race.
 \examples{
 data(TenMileRace)
 if (require(ggformula)) {
-  gf_point(net ~ age | sex, data = TenMileRace, color = ~sex, alpha = 0.1) \%>\%
+  gf_point(net ~ age | sex, data = TenMileRace, color = ~sex, alpha = 0.1) |>
   gf_density2d(color = "gray40")
   lm(net ~ age + sex, data = TenMileRace)
 }

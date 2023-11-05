@@ -6,18 +6,18 @@
 \title{State by State SAT data}
 \format{
 A data frame with 50 observations on the following variables.
-\itemize{
-\item{\code{state}} {a factor with names of each state}
-\item{\code{expend}} {expenditure per pupil in average daily attendance in
+\describe{
+\item{\code{state}}{a factor with names of each state}
+\item{\code{expend}}{expenditure per pupil in average daily attendance in
 public elementary and secondary schools, 1994-95 (in thousands of US dollars)}
-\item{\code{ratio}} {average pupil/teacher ratio in public elementary and secondary
+\item{\code{ratio}}{average pupil/teacher ratio in public elementary and secondary
 schools, Fall 1994}
-\item{\code{salary}} {estimated average annual salary of teachers in public elementary
+\item{\code{salary}}{estimated average annual salary of teachers in public elementary
 and secondary schools, 1994-95 (in thousands of US dollars)}
-\item{\code{frac}} {percentage of all eligible students taking the SAT, 1994-95}
-\item{\code{verbal}} {average verbal SAT score, 1994-95}
-\item{\code{math}} {average math SAT score, 1994-95}
-\item{\code{sat}} {average total SAT score, 1994-95}
+\item{\code{frac}}{percentage of all eligible students taking the SAT, 1994-95}
+\item{\code{verbal}}{average verbal SAT score, 1994-95}
+\item{\code{math}}{average math SAT score, 1994-95}
+\item{\code{sat}}{average total SAT score, 1994-95}
 }
 }
 \source{
@@ -33,11 +33,11 @@ link between SAT scores and measures of educational expenditures
 \examples{
 data(SAT)
 if (require(ggformula)) {
-  gf_point(sat ~ expend, data = SAT, color = "blue", alpha = 0.5) \%>\%
+  gf_point(sat ~ expend, data = SAT, color = "blue", alpha = 0.5) |>
     gf_lm()
   gf_text(sat ~ expend, data = SAT, label = ~ abbreviate(SAT$state, 3),
     inherit = FALSE)
-} 
+}
 }
 \references{
 Deborah Lynn Guber, "Getting what you pay for: the debate over equity in

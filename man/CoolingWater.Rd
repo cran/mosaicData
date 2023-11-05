@@ -6,9 +6,9 @@
 \title{CoolingWater}
 \format{
 A data frame with 222 observations of the following variables.
-\itemize{
-\item \code{time} time in minutes
-\item \code{temp} temperature in Celsius
+\describe{
+\item{\code{time}}{time in minutes}
+\item{\code{temp}}{temperature in Celsius}
 }
 }
 \source{

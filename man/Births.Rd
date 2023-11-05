@@ -10,22 +10,23 @@
 \title{US Births}
 \format{
 A data.frame with the following 8 variables.
-\itemize{
-\item \code{date}   Date
-\item \code{births} Number of births on \code{date} (integer)
-\item \code{wday}   Day of week (ordered factor)
-\item \code{year}   Year (integer)
-\item \code{month}  Month (integer)
-\item \code{day_of_year}  Day of year (integer)
-\item \code{day_of_month} Day of month (integer)
-\item \code{day_of_week}  Day of week (integer)
+
+\describe{
+\item{\code{date}}{Date}
+\item{\code{births}}{Number of births on \code{date} (integer)}
+\item{\code{wday}}{Day of week (ordered factor)}
+\item{\code{year}}{Year (integer)}
+\item{\code{month}}{Month (integer)}
+\item{\code{day_of_year}}{Day of year (integer)}
+\item{\code{day_of_month}}{Day of month (integer)}
+\item{\code{day_of_week}}{Day of week (integer)}
 }
 }
 \source{
 \itemize{
 \item Data source for \code{Births}: National Vital Statistics System natality data, as provided by
 Google BigQuery and exported to csv by
-Robert Kern \url{http://www.mechanicalkern.com/static/birthdates-1968-1988.csv}.
+Robert Kern \url{https://www.mechanicalkern.com:443/static/birthdates-1968-1988.csv}.
 \item Data source for \code{BirthsSSA}  US Social Security Administration, as curated at \url{https://github.com/fivethirtyeight/data/tree/master/births}
 \item Data source for \code{BirthsCDC}  US Centers for Disease Control, as curated at \url{https://github.com/fivethirtyeight/data/tree/master/births}
 \item Data source for \code{Births2015}: Obtained from the National Center for Health Statistics,
@@ -79,8 +80,8 @@ if(require(ggplot2)) {
     stat_smooth(se = FALSE, geom = "line", alpha = 0.6, size = 1.5)
   if (require(dplyr)) {
     ggplot(
-     data =  bind_cols(Births \%>\% filter(year == 1978),
-                       Births78 \%>\% rename(births78 = births)),
+     data =  bind_cols(Births |> filter(year == 1978),
+                       Births78 |> rename(births78 = births)),
      aes(x = births - births78)
      ) +
      geom_histogram(binwidth = 1)
@@ -95,16 +96,16 @@ if(require(ggplot2)) {
     stat_smooth(se = FALSE, geom = "line", alpha = 0.6, size = 1.5)
   if (require(dplyr)) {
     ggplot(
-     data =  bind_cols(Births \%>\% filter(year == 1978),
-                       Births78 \%>\% rename(births78 = births)),
+     data =  bind_cols(Births |> filter(year == 1978),
+                       Births78 |> rename(births78 = births)),
      aes(x = births - births78)
      ) +
      geom_histogram(binwidth = 1)
 
     # SSA records more births than CDC
     ggplot(
-     data =  bind_cols(BirthsSSA \%>\% filter(year <= 2003) \%>\% rename(SSA = births),
-                       BirthsCDC \%>\% filter(year >= 2000) \%>\% rename(CDC = births)),
+     data =  bind_cols(BirthsSSA |> filter(year <= 2003) |> rename(SSA = births),
+                       BirthsCDC |> filter(year >= 2000) |> rename(CDC = births)),
      aes(x = SSA - CDC)
      ) +
      geom_histogram(binwidth = 10)

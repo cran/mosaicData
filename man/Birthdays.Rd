@@ -6,13 +6,14 @@
 \title{US Births in 1969 - 1988}
 \format{
 A data frame with 374221 observations on the following variables.
-\itemize{
-\item{\code{state}} {state where child was born}
-\item{\code{year}} {year (1969-1988)}
-\item{\code{month}} {month (1-12)}
-\item{\code{day}} {day of month}
-\item{\code{date}} {date as a date object}
-\item{\code{births}} {number of births}
+\describe{
+\item{\code{state}}{state where child was born}
+\item{\code{year}}{year (1969-1988)}
+\item{\code{month}}{month (1-12)}
+\item{\code{day}}{day of month}
+\item{\code{date}}{date as a date object}
+\item{\code{wday}}{Day of week (ordered factor)}
+\item{\code{births}}{number of births}
 }
 }
 \usage{
@@ -24,11 +25,11 @@ A day by day record of the number of births in each US State.
 \examples{
 data(Birthdays)
 if (require(mosaic)) {
-  MI <- Birthdays \%>\% filter(state == "MI")
+  MI <- Birthdays |> filter(state == "MI")
   gf_point(births ~ date, Birthdays, data = MI)
   gf_line(births ~ date, Birthdays, data = MI, color = ~ wday)
   gf_line(births ~ date,
-    data = Birthdays \%>\% group_by(date) \%>\% summarise(births = sum(births)))
+    data = Birthdays |> group_by(date) |> summarise(births = sum(births)))
   }
 }
 \seealso{
